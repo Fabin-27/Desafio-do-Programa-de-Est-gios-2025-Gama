@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "gateway",
+    "authenticationType": "oauth2",
+    "baseName": "frontEnd",
+    "buildTool": "maven",
+    "cacheProvider": null,
+    "clientFramework": "angular",
+    "clientTestFrameworks": [],
+    "clientTheme": "none",
+    "creationTimestamp": 1742142595428,
+    "databaseType": "no",
+    "devDatabaseType": null,
+    "enableHibernateCache": null,
+    "enableTranslation": true,
+    "entities": [],
+    "feignClient": null,
+    "jhipsterVersion": "8.9.0",
+    "languages": ["pt-br", "en"],
+    "microfrontend": true,
+    "microfrontends": [
+      {
+        "baseName": "mFront1"
+      },
+      {
+        "baseName": "mFront2"
+      }
+    ],
+    "monorepository": true,
+    "nativeLanguage": "pt-br",
+    "packageName": "com.mycompany.myapp",
+    "prodDatabaseType": null,
+    "reactive": true,
+    "serverPort": "8085",
+    "serviceDiscoveryType": "eureka",
+    "skipCommitHook": true,
+    "skipUserManagement": true,
+    "syncUserWithIdp": false,
+    "testFrameworks": [],
+    "withAdminUi": false
+  }
+}
