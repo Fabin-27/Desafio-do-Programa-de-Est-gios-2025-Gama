@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "changelogDate": "20250316172952"
+  },
+  "clientRootFolder": "backEnd",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nome",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "pattern"],
+      "fieldValidateRulesPattern": "(^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$)"
+    },
+    {
+      "fieldName": "dtNascimento",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cpf",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "pattern"],
+      "fieldValidateRulesPattern": "([0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?([0-9]){2})"
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "backEnd",
+  "name": "Aluno",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

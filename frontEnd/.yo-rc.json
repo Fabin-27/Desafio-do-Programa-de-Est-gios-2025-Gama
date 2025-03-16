@@ -13,9 +13,10 @@
     "devDatabaseType": null,
     "enableHibernateCache": null,
     "enableTranslation": true,
-    "entities": [],
+    "entities": ["Aluno"],
     "feignClient": null,
     "jhipsterVersion": "8.9.0",
+    "jwtSecretKey": "ZGE4NjcxY2YyYTA3N2U2YWFjZjkyYzY5ZGQ2ZmI3YzdlY2IwZmM0NDc4ZWEwNTYyYjJkNGVjYWU5NTYxMDg1N2JiN2UzYjA5YzBkZmRmZTE0MzBlZmIzYTJiMzg2OWYyZWJjNGI0MTRmMGEzM2I0MGExOTQ0OTM4YmIxNTUyYTk=",
     "languages": ["pt-br", "en"],
     "microfrontend": true,
     "microfrontends": [
