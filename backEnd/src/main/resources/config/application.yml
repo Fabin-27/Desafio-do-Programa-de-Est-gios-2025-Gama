@@ -180,11 +180,11 @@ spring:
       client:
         provider:
           oidc:
-            issuer-uri: http://localhost:9080/realms/jhipster
+            issuer-uri: http://localhost:8080/realms/appGama
         registration:
           oidc:
-            client-id: internal
-            client-secret: internal
+            client-id: gamajhipster270
+            client-secret: M8Av70nSXAi7wO7opxFR5bAvPRTboLHp
             scope: openid, profile, email, offline_access # last one for refresh tokens
   task:
     execution:
