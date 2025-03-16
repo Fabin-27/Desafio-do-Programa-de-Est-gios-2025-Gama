@@ -80,6 +80,7 @@ class AlunoCriteriaTest {
         alunoCriteria.email();
         alunoCriteria.dtNascimento();
         alunoCriteria.cpf();
+        alunoCriteria.metaAlunoId();
         alunoCriteria.distinct();
     }
 
@@ -91,6 +92,7 @@ class AlunoCriteriaTest {
                 condition.apply(criteria.getEmail()) &&
                 condition.apply(criteria.getDtNascimento()) &&
                 condition.apply(criteria.getCpf()) &&
+                condition.apply(criteria.getMetaAlunoId()) &&
                 condition.apply(criteria.getDistinct()),
             "every filter matches"
         );
@@ -104,6 +106,7 @@ class AlunoCriteriaTest {
                 condition.apply(criteria.getEmail(), copy.getEmail()) &&
                 condition.apply(criteria.getDtNascimento(), copy.getDtNascimento()) &&
                 condition.apply(criteria.getCpf(), copy.getCpf()) &&
+                condition.apply(criteria.getMetaAlunoId(), copy.getMetaAlunoId()) &&
                 condition.apply(criteria.getDistinct(), copy.getDistinct()),
             "every filter matches"
         );

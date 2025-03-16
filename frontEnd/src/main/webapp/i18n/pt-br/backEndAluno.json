@@ -18,7 +18,8 @@
       "nome": "Nome",
       "email": "Email",
       "dtNascimento": "Dt Nascimento",
-      "cpf": "Cpf"
+      "cpf": "Cpf",
+      "metaAluno": "Meta Aluno"
     }
   },
   "backEndApp": {

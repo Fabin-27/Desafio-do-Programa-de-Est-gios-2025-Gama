@@ -6,6 +6,7 @@ import com.mycompany.myapp.repository.AlunoRepository;
 import com.mycompany.myapp.service.criteria.AlunoCriteria;
 import com.mycompany.myapp.service.dto.AlunoDTO;
 import com.mycompany.myapp.service.mapper.AlunoMapper;
+import jakarta.persistence.criteria.JoinType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -87,6 +88,11 @@ public class AlunoQueryService extends QueryService<Aluno> {
             }
             if (criteria.getCpf() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getCpf(), Aluno_.cpf));
+            }
+            if (criteria.getMetaAlunoId() != null) {
+                specification = specification.and(
+                    buildSpecification(criteria.getMetaAlunoId(), root -> root.join(Aluno_.metaAlunos, JoinType.LEFT).get(Meta_.id))
+                );
             }
         }
         return specification;

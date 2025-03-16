@@ -32,6 +32,8 @@ public class AlunoCriteria implements Serializable, Criteria {
 
     private StringFilter cpf;
 
+    private LongFilter metaAlunoId;
+
     private Boolean distinct;
 
     public AlunoCriteria() {}
@@ -42,6 +44,7 @@ public class AlunoCriteria implements Serializable, Criteria {
         this.email = other.optionalEmail().map(StringFilter::copy).orElse(null);
         this.dtNascimento = other.optionalDtNascimento().map(LocalDateFilter::copy).orElse(null);
         this.cpf = other.optionalCpf().map(StringFilter::copy).orElse(null);
+        this.metaAlunoId = other.optionalMetaAlunoId().map(LongFilter::copy).orElse(null);
         this.distinct = other.distinct;
     }
 
@@ -145,6 +148,25 @@ public class AlunoCriteria implements Serializable, Criteria {
         this.cpf = cpf;
     }
 
+    public LongFilter getMetaAlunoId() {
+        return metaAlunoId;
+    }
+
+    public Optional<LongFilter> optionalMetaAlunoId() {
+        return Optional.ofNullable(metaAlunoId);
+    }
+
+    public LongFilter metaAlunoId() {
+        if (metaAlunoId == null) {
+            setMetaAlunoId(new LongFilter());
+        }
+        return metaAlunoId;
+    }
+
+    public void setMetaAlunoId(LongFilter metaAlunoId) {
+        this.metaAlunoId = metaAlunoId;
+    }
+
     public Boolean getDistinct() {
         return distinct;
     }
@@ -179,13 +201,14 @@ public class AlunoCriteria implements Serializable, Criteria {
             Objects.equals(email, that.email) &&
             Objects.equals(dtNascimento, that.dtNascimento) &&
             Objects.equals(cpf, that.cpf) &&
+            Objects.equals(metaAlunoId, that.metaAlunoId) &&
             Objects.equals(distinct, that.distinct)
         );
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nome, email, dtNascimento, cpf, distinct);
+        return Objects.hash(id, nome, email, dtNascimento, cpf, metaAlunoId, distinct);
     }
 
     // prettier-ignore
@@ -197,6 +220,7 @@ public class AlunoCriteria implements Serializable, Criteria {
             optionalEmail().map(f -> "email=" + f + ", ").orElse("") +
             optionalDtNascimento().map(f -> "dtNascimento=" + f + ", ").orElse("") +
             optionalCpf().map(f -> "cpf=" + f + ", ").orElse("") +
+            optionalMetaAlunoId().map(f -> "metaAlunoId=" + f + ", ").orElse("") +
             optionalDistinct().map(f -> "distinct=" + f + ", ").orElse("") +
         "}";
     }

@@ -1,0 +1,9 @@
+export enum areaDoEnem {
+  LINGUAGENS = 'LINGUAGENS',
+
+  HUMANAS = 'HUMANAS',
+
+  NATUREZA = 'NATUREZA',
+
+  MATEMATICA = 'MATEMATICA',
+}

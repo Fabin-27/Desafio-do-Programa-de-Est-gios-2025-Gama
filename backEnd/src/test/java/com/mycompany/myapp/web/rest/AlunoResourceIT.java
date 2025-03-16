@@ -40,15 +40,15 @@ class AlunoResourceIT {
     private static final String DEFAULT_NOME = "AAAAAAAAAA";
     private static final String UPDATED_NOME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_EMAIL = "JO@5Cc.8HDbWg.MOj";
-    private static final String UPDATED_EMAIL = "3.CGI@Tf.S4uVOD.3MXrb.WQ.kLA_r.19xfL.MCV";
+    private static final String DEFAULT_EMAIL = "T_@E81n.ejuL.QGJ._vr.S.l35e";
+    private static final String UPDATED_EMAIL = "PN74@TaRh.P7cd.CAHo";
 
     private static final LocalDate DEFAULT_DT_NASCIMENTO = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DT_NASCIMENTO = LocalDate.now(ZoneId.systemDefault());
     private static final LocalDate SMALLER_DT_NASCIMENTO = LocalDate.ofEpochDay(-1L);
 
-    private static final String DEFAULT_CPF = "228555.81921";
-    private static final String UPDATED_CPF = "617129917-24";
+    private static final String DEFAULT_CPF = "618562599-00";
+    private static final String UPDATED_CPF = "428.290546-00";
 
     private static final String ENTITY_API_URL = "/api/alunos";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -656,7 +656,7 @@ class AlunoResourceIT {
         Aluno partialUpdatedAluno = new Aluno();
         partialUpdatedAluno.setId(aluno.getId());
 
-        partialUpdatedAluno.email(UPDATED_EMAIL).dtNascimento(UPDATED_DT_NASCIMENTO);
+        partialUpdatedAluno.nome(UPDATED_NOME).cpf(UPDATED_CPF);
 
         restAlunoMockMvc
             .perform(

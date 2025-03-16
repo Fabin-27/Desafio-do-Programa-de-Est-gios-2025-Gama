@@ -1,9 +1,12 @@
 package com.mycompany.myapp.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A Aluno.
@@ -38,6 +41,10 @@ public class Aluno implements Serializable {
     @Pattern(regexp = "([0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?([0-9]){2})")
     @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "metaAluno")
+    @JsonIgnoreProperties(value = { "metaAluno" }, allowSetters = true)
+    private Set<Meta> metaAlunos = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -104,6 +111,37 @@ public class Aluno implements Serializable {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public Set<Meta> getMetaAlunos() {
+        return this.metaAlunos;
+    }
+
+    public void setMetaAlunos(Set<Meta> metas) {
+        if (this.metaAlunos != null) {
+            this.metaAlunos.forEach(i -> i.setMetaAluno(null));
+        }
+        if (metas != null) {
+            metas.forEach(i -> i.setMetaAluno(this));
+        }
+        this.metaAlunos = metas;
+    }
+
+    public Aluno metaAlunos(Set<Meta> metas) {
+        this.setMetaAlunos(metas);
+        return this;
+    }
+
+    public Aluno addMetaAluno(Meta meta) {
+        this.metaAlunos.add(meta);
+        meta.setMetaAluno(this);
+        return this;
+    }
+
+    public Aluno removeMetaAluno(Meta meta) {
+        this.metaAlunos.remove(meta);
+        meta.setMetaAluno(null);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here

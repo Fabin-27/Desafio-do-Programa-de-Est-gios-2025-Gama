@@ -1,0 +1,39 @@
+{
+  "annotations": {
+    "changelogDate": "20250316194958"
+  },
+  "clientRootFolder": "backEnd",
+  "databaseType": "sql",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "area",
+      "fieldType": "areaDoEnem",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "LINGUAGENS,HUMANAS,NATUREZA,MATEMATICA"
+    },
+    {
+      "fieldName": "valor",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "jpaMetamodelFiltering": true,
+  "microserviceName": "backEnd",
+  "name": "Meta",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "nome",
+      "otherEntityName": "aluno",
+      "otherEntityRelationshipName": "metaAluno",
+      "relationshipName": "metaAluno",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"]
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}
