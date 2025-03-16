@@ -28,6 +28,8 @@
     -->
 
     <logger name="com.mycompany.myapp" level="INFO"/>
+    
+    <logger name="jakarta.management" level="WARN"/>
 
     <logger name="angus.activation" level="WARN"/>
     <logger name="jakarta.activation" level="WARN"/>
